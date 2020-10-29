@@ -26,12 +26,22 @@ app.set('view engine', 'hbs')
 
 //set routes
 app.get('/', (req, res) => {
-  randomURL()
   res.render('index')
 })
 
 app.post('/', (req, res) => {
-  return Url.create(req.body)
+  let shortAddress = randomURL()
+  console.log(shortAddress)
+  Url.find({ shortAddress: `${shortAddress}` })
+    .then((item) => console.log(item))
+    .catch((error) => console.log(error))
+  // while (Url.find({ shortAddress: `${shortAddress}` })) {
+  //   shortAddress = randomURL()
+  //   console.log(shortAddress)
+  // }
+
+  const address = req.body.address
+  return Url.create({ address, shortAddress })
     .then(() => res.redirect('/'))
     .catch((error) => console.log(error))
 })
