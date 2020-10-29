@@ -3,6 +3,7 @@ const exhbs = require('express-handlebars')
 const bodyParser = express.urlencoded({ extended: true })
 const mongoose = require('mongoose')
 const Url = require('./models/url')
+const randomURL = require('./randomURL')
 
 const app = express()
 const port = 3000
@@ -25,6 +26,7 @@ app.set('view engine', 'hbs')
 
 //set routes
 app.get('/', (req, res) => {
+  randomURL()
   res.render('index')
 })
 
