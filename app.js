@@ -2,6 +2,7 @@ const express = require('express')
 const exhbs = require('express-handlebars')
 const bodyParser = express.urlencoded({ extended: true })
 const mongoose = require('mongoose')
+const Url = require('./models/url')
 
 const app = express()
 const port = 3000
@@ -28,8 +29,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  console.log(req.body)
-  console.log('Success!')
+  return Url.create(req.body)
+    .then(() => res.redirect('/'))
+    .catch((error) => console.log(error))
 })
 //start server
 app.listen(port, () => {
