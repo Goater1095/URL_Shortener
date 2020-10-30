@@ -1,12 +1,15 @@
 <h1>URL_Shortener</h1>
 
 <form action="/" method="POST">
-  <input type="text" placeholder="Key in web address" name='address'>
+  <input class='form-control' type=" text" placeholder="Key in web address" name='address' value='{{address}}'>
   <button type="submit">Shorten URL</button>
 </form>
 
 
 <div class="alert text-white bg-dark font-weight-bolder mt-2" role="alert">
-  <h6>{{url.address}} </h6>
-  <h2>{{url.shortAddress}}</h2>
+  {{!-- <h6>{{url.address}} </h6>
+  <h2>{{url.shortAddress}}</h2> --}}
+
+  <h6>{{address}} </h6>
+  <h2>{{shortAddress}}</h2>
 </div>
