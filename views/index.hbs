@@ -2,21 +2,26 @@
   <div class="row">
     <h1 class="col text-center text-white">URL_Shortener</h1>
   </div>
+
+  <div class="row">
+    <img class="img-fluid p-2" src="https://mybigplunge.com/wp-content/uploads/2018/04/url-shortener-theplungedaily.jpg"
+      alt="URL-shortener image">
+  </div>
   <form class='row justify-content-center' action="/" method="POST">
     <input class='col-10 mt-3 form-control w-50' type="text" placeholder="Key in web address" name='address'
       value='{{address}}' required>
-    <button class="col-4 mx-auto mt-3 btn btn-outline-primary" type="submit">Shorten
+    <button class="col-4 mx-auto mt-3 btn btn-outline-success" type="submit">Shorten
       URL</button>
   </form>
 
-  <div class="row">
+  <div class="row mt-3">
     <a href="{{address}}" class="col-11 mx-auto">
-      <input class='text-danger mt-3 mx-auto form-control' type="text" placeholder="Short URL..." id="shortURL"
+      <input class='text-primary mt-3 mx-auto form-control' type="text" placeholder="Short URL..." id="shortURL"
         value=' {{shortAddress}}' disabled>
     </a>
   </div>
   <div class="row">
-    <button class="col-2 mx-auto my-3 btn btn-outline-danger" onclick="copyText()">Copy</button>
+    <button class="col-2 mx-auto my-3 btn btn-outline-primary" onclick="copyText()">Copy</button>
   </div>
 
 </div>
@@ -24,7 +29,6 @@
 <script type="text/javascript">
   function copyText() {
     const input = document.getElementById("shortURL");
-    //const input = document.getElementById("input");
     console.log(input)
     input.select(); // 選中文字
     document.execCommand("copy"); // 執行瀏覽器複製命令
