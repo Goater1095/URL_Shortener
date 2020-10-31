@@ -1,15 +1,22 @@
-<h1>URL_Shortener</h1>
+<div class="container bg-dark">
+  <div class="row">
+    <h1 class="col text-center text-white">URL_Shortener</h1>
+  </div>
+  <form class='row justify-content-center' action="/" method="POST">
+    <input class='col-10 mt-3 form-control w-50' type="text" placeholder="Key in web address" name='address'
+      value='{{address}}' required>
+    <button class="col-4 mx-auto mt-3 btn btn-outline-primary" type="submit">Shorten
+      URL</button>
+  </form>
 
-<form action="/" method="POST">
-  <input class='form-control' type=" text" placeholder="Key in web address" name='address' value='{{address}}'>
-  <button type="submit">Shorten URL</button>
-</form>
+  <div class="row">
+    <a class="col-10 mt-3 mx-auto form-control text-danger" href="{{address}}"
+      placeholder="Short URL...">{{shortAddress}}</a>
+  </div>
+  <div class="row">
+    <button type="button" class="col-2 mx-auto my-3 btn btn-outline-danger" type="submit">Copy</button>
+  </div>
 
-
-<div class="alert text-white bg-dark font-weight-bolder mt-2" role="alert">
-  {{!-- <h6>{{url.address}} </h6>
-  <h2>{{url.shortAddress}}</h2> --}}
-
-  <h6>{{address}} </h6>
-  <h2>{{shortAddress}}</h2>
+  {{!-- <button type="button" class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button> --}}
+</div>
 </div>

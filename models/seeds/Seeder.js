@@ -9,7 +9,6 @@ const webList = [
 ];
 
 db.once('open', () => {
-  console.log('Mongodb Connected!');
   for (let address of webList) {
     Url.create({ address, shortAddress: randomURL() });
   }
