@@ -10,7 +10,7 @@
 
 ### 專案畫面
 
-![image](https://github.com/pierceshih15/restaurantList/blob/master/public/img/homePage.png)
+![image](https://github.com/Goater1095/URL_Shortener/blob/master/public/URLshortener_image.PNG)
 
 ### 安裝
 
