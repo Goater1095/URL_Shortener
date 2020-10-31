@@ -14,4 +14,3 @@ function randomURL() {
 }
 
 module.exports = randomURL;
-// https://your-project-name.herokuapp.com/6y7UP

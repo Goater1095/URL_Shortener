@@ -10,13 +10,24 @@
   </form>
 
   <div class="row">
-    <a class="col-10 mt-3 mx-auto form-control text-danger" href="{{address}}"
-      placeholder="Short URL...">{{shortAddress}}</a>
+    <a href="{{address}}" class="col-11 mx-auto">
+      <input class='text-danger mt-3 mx-auto form-control' type="text" placeholder="Short URL..." id="shortURL"
+        value=' {{shortAddress}}' disabled>
+    </a>
   </div>
   <div class="row">
-    <button type="button" class="col-2 mx-auto my-3 btn btn-outline-danger" type="submit">Copy</button>
+    <button class="col-2 mx-auto my-3 btn btn-outline-danger" onclick="copyText()">Copy</button>
   </div>
 
-  {{!-- <button type="button" class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</button> --}}
 </div>
-</div>
+
+<script type="text/javascript">
+  function copyText() {
+    const input = document.getElementById("shortURL");
+    //const input = document.getElementById("input");
+    console.log(input)
+    input.select(); // 選中文字
+    document.execCommand("copy"); // 執行瀏覽器複製命令
+    alert("複製成功");
+  }
+</script>
