@@ -20,9 +20,15 @@ router.post('/', (req, res) => {
         });
       } else {
         //資料庫沒有網址,直接進入函式產生短網址
+        //  fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
         let shortAddress = '';
         function find() {
-          shortAddress = `http://` + req.get('host') + '/' + randomURL();
+          shortAddress =
+            req.protocol +
+            '://' +
+            req.get('host') +
+            req.originalUrl +
+            randomURL();
           Url.findOne({ shortAddress })
             .then((url) => {
               if (url) return find(); //recursion
@@ -47,7 +53,8 @@ router.post('/', (req, res) => {
 
 router.get('/:randomWords', (req, res) => {
   const randomWords = req.params.randomWords;
-  const shortAddress = `http://` + req.get('host') + '/' + randomWords;
+  const shortAddress = req.protocol + '://' + req.get('host') + req.originalUrl;
+  console.log(shortAddress);
   Url.findOne({ shortAddress })
     .then((url) => res.redirect(url.address))
     .catch((error) => res.send(`Error: the shortAddress does not exist.`));
