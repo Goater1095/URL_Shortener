@@ -1,16 +1,16 @@
-const eUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const eLowerCase = eUpperCase.toLowerCase();
-const numbers = '0123456789';
+const eUpperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const eLowerCase = eUpperCase.toLowerCase()
+const numbers = '0123456789'
 
-const collection = eUpperCase + eLowerCase + numbers;
+const collection = eUpperCase + eLowerCase + numbers
 
 function randomURL() {
-  let passWords = '';
+  let randomWords = ''
   for (let i = 0; i < 5; i++) {
-    const index = Math.floor(Math.random() * collection.length);
-    passWords += collection[index];
+    const index = Math.floor(Math.random() * collection.length)
+    randomWords += collection[index]
   }
-  return `https://URL_SHORTENER.herokuapp.com/${passWords}`;
+  return `${randomWords}`
 }
 
-module.exports = randomURL;
+module.exports = randomURL
