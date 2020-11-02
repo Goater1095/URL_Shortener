@@ -1,6 +1,5 @@
 const db = require('../../config/mongoose');
 const randomURL = require('../../randomURL');
-const host = 'http://localhost:3000/';
 const Url = require('../url');
 const webList = [
   'https://www.google.com/',
@@ -10,7 +9,10 @@ const webList = [
 
 db.once('open', () => {
   for (let address of webList) {
-    Url.create({ address, shortAddress: host + randomURL() });
+    Url.create({
+      address,
+      shortAddress: `http://` + req.get('host') + '/' + randomURL(),
+    });
   }
   console.log('Done');
 });
