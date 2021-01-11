@@ -2,6 +2,7 @@
 
 一個使用 Express + node.js + MongoDB 建立的短網址產生器
 
+(heroku 連結:https://polar-mountain-44380.herokuapp.com/）
 ### 功能描述 (features)：
 
 - 使用者可以點擊按鈕 "產生" 短網址
